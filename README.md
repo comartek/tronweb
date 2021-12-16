@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img align="center" src="https://raw.githubusercontent.com/tron-us/tronweb/master/assets/TronWeb-logo.png" width="400"/>
+  <img align="center" src="https://raw.githubusercontent.com/tron-us/welweb/master/assets/WelWeb-logo.png" width="400"/>
 </h1>
 
 <p align="center">
@@ -7,28 +7,28 @@
     <img src="https://img.shields.io/badge/chat-on%20discord-brightgreen.svg">
   </a>
 
-  <a href="https://github.com/tron-us/tronweb/issues">
-    <img src="https://img.shields.io/github/issues/tron-us/tronweb.svg">
+  <a href="https://github.com/tron-us/welweb/issues">
+    <img src="https://img.shields.io/github/issues/tron-us/welweb.svg">
   </a>
 
-  <a href="https://github.com/tron-us/tronweb/pulls">
-    <img src="https://img.shields.io/github/issues-pr/tron-us/tronweb.svg">
+  <a href="https://github.com/tron-us/welweb/pulls">
+    <img src="https://img.shields.io/github/issues-pr/tron-us/welweb.svg">
   </a>
 
-  <a href="https://github.com/tron-us/tronweb/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/tron-us/tronweb.svg">
+  <a href="https://github.com/tron-us/welweb/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/tron-us/welweb.svg">
   </a>
 
   <a href="LICENSE">
-    <img src="https://img.shields.io/github/license/tron-us/tronweb.svg">
+    <img src="https://img.shields.io/github/license/tron-us/welweb.svg">
   </a>
 </p>
 
-## What is TronWeb?
+## What is WelWeb?
 
 __[Tron Web - Developer Document](https://developers.tron.network/docs/tron-web-intro)__
 
-TronWeb aims to deliver a unified, seamless development experience influenced by Ethereum's [Web3](https://github.com/ethereum/web3.js/) implementation. We have taken the core ideas and expanded upon it to unlock the functionality of TRON's unique feature set along with offering new tools for integrating DApps in the browser, Node.js and IoT devices.
+WelWeb aims to deliver a unified, seamless development experience influenced by Ethereum's [Web3](https://github.com/ethereum/web3.js/) implementation. We have taken the core ideas and expanded upon it to unlock the functionality of WELUPS's unique feature set along with offering new tools for integrating DApps in the browser, Node.js and IoT devices.
 
 ## Compatibility
 - Version built for Node.js v6 and above
@@ -36,34 +36,34 @@ TronWeb aims to deliver a unified, seamless development experience influenced by
 
 You can access either version specifically from the [dist](dist) folder.
 
-TronWeb is also compatible with frontend frameworks such as:
+WelWeb is also compatible with frontend frameworks such as:
 - Angular
 - React
 - Vue.
 
-You can also ship TronWeb in a Chrome extension.
+You can also ship WelWeb in a Chrome extension.
 
 ## Installation
 
 ### Node.js
 ```bash
-npm install tronweb
+npm install welweb
 ```
 or
 ```bash
-yarn add tronweb
+yarn add welweb
 ```
 
 ### Browser
 First, don't use the release section of this repo, it has not updated in a long time.
 
-Then easiest way to use TronWeb in a browser is to install it as above and copy the dist file to your working folder. For example:
+Then easiest way to use WelWeb in a browser is to install it as above and copy the dist file to your working folder. For example:
 ```
-cp node_modules/tronweb/dist/TronWeb.js ./js/tronweb.js
+cp node_modules/welweb/dist/WelWeb.js ./js/welweb.js
 ```
 so that you can call it in your HTML page as
 ```
-<script src="./js/tronweb.js"><script>
+<script src="./js/welweb.js"><script>
 ```
 
 ## Testnet
@@ -94,13 +94,13 @@ docker run -it --rm \
 
 ## Creating an Instance
 
-First off, in your javascript file, define TronWeb:
+First off, in your javascript file, define WelWeb:
 
 ```js
-const TronWeb = require('tronweb')
+const WelWeb = require('welweb')
 ```
 
-When you instantiate TronWeb you can define
+When you instantiate WelWeb you can define
 
 * fullNode
 * solidityNode
@@ -112,26 +112,26 @@ you can also set a
 * fullHost
 
 which works as a jolly. If you do so, though, the more precise specification has priority.
-Supposing you are using a server which provides everything, like TronGrid, you can instantiate TronWeb as:
+Supposing you are using a server which provides everything, like TronGrid, you can instantiate WelWeb as:
 
 ```js
-const tronWeb = new TronWeb({
+const welWeb = new WelWeb({
     fullHost: 'https://api.trongrid.io',
-    headers: { "TRON-PRO-API-KEY": 'your api key' },
+    headers: { "WELUPS-PRO-API-KEY": 'your api key' },
     privateKey: 'your private key'
 })
 ```
 
 For retro-compatibility, though, you can continue to use the old approach, where any parameter is passed separately:
 ```js
-const tronWeb = new TronWeb(fullNode, solidityNode, eventServer, privateKey)
-tronWeb.setHeader({ "TRON-PRO-API-KEY": 'your api key' });
+const welWeb = new WelWeb(fullNode, solidityNode, eventServer, privateKey)
+welWeb.setHeader({ "WELUPS-PRO-API-KEY": 'your api key' });
 ```
 
 If you are, for example, using a server as full and solidity node, and another server for the events, you can set it as:
 
 ```js
-const tronWeb = new TronWeb({
+const welWeb = new WelWeb({
     fullHost: 'https://api.trongrid.io',
     eventServer: 'https://api.someotherevent.io',
     privateKey: 'your private key'
@@ -141,7 +141,7 @@ const tronWeb = new TronWeb({
 
 If you are using different servers for anything, you can do
 ```js
-const tronWeb = new TronWeb({
+const welWeb = new WelWeb({
     fullNode: 'https://some-node.tld',
     solidityNode: 'https://some-other-node.tld',
     eventServer: 'https://some-event-server.tld',
@@ -152,11 +152,11 @@ const tronWeb = new TronWeb({
 
 ## A full example
 
-The better way to understand how to work with TronWeb is go to the demo directory in this repository.
+The better way to understand how to work with WelWeb is go to the demo directory in this repository.
 
 If you'd like to connect with tronlink app and chrome extention and develop a dapp on tron, you could run the demo in path demo/tron-dapp-react-demo.
 
-If you'd like to develop only with tronweb dependency, you could run the demo in path demo/tronweb-demo.
+If you'd like to develop only with welweb dependency, you could run the demo in path demo/welweb-demo.
 
 ## Contributions
 
@@ -165,7 +165,7 @@ In order to contribute you can
 * fork this repo and clone it locally
 * install the dependencies — `npm i`
 * do your changes to the code
-* build the TronWeb dist files — `npm run build`
+* build the WelWeb dist files — `npm run build`
 * run a local private network using Tron Quickstart
 * run the tests — `npm test:node`
 * push your changes and open a pull request
@@ -287,19 +287,19 @@ __2.3.3__
 * Adds filters during event watching.
 
 __2.3.2__
-* Removes mixed approach instantiating tronWeb. Before you could pass the servers as an object, and the privateKey as a separate parameter. Now, you pass them either in the options object or in the params.
+* Removes mixed approach instantiating welWeb. Before you could pass the servers as an object, and the privateKey as a separate parameter. Now, you pass them either in the options object or in the params.
 
 __2.3.1__
 * Adds support for not-tld domain, like http://localhost
 * Improve the new format, allow passing the privateKey as a property in the option object
 
 __2.3.0__
-* Introduces new format to instantiate tronWeb, passing an options object instead that `fullNode`, `solidityNode` and `eventServer` as separate params
+* Introduces new format to instantiate welWeb, passing an options object instead that `fullNode`, `solidityNode` and `eventServer` as separate params
 * Fixes bug in `_watch` which causes a continuous update of the `since` parameter
 
 ## Licence
 
-TronWeb is distributed under a MIT licence.
+WelWeb is distributed under a MIT licence.
 
 
 -----
